@@ -98,7 +98,7 @@ export class EventsListComponent {
     }
   }
 
-  // Functions for frontend filtering and sorting
+  //START Functions for frontend filtering and sorting
   // get filteredEvents(): Event[] {
   //   let filteredItems = this.events.filter(
   //     (event) =>
@@ -145,8 +145,9 @@ export class EventsListComponent {
   //   const endIndex = Number(startIndex) + Number(this.itemsPerPage);
   //   return endIndex < this.filteredEvents.length;
   // }
+  //END Functions for frontend filtering and sorting
 
-  //Listening for filters changes to restore currentPage
+  //START Listening for filters changes to restore currentPage
   get selectedSportsItems(): string[] {
     return this._selectedSportsItems;
   }
@@ -175,4 +176,5 @@ export class EventsListComponent {
     this._search = newSearchText;
     this.getEvents();
   }
+  //END Listening for filters changes to restore currentPage
 }

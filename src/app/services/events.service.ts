@@ -36,7 +36,6 @@ export class EventsService {
       : '';
     let sportsString = sports?.length ? `sports=${sports?.join(',')}&` : '';
     const url = `${this.apiUrl}?activePage=${activePage}&itemsPerPage=${itemsPerPage}&orderBy=${orderBy}&${statusesString}${sportsString}searchText=${searchText}`;
-    console.log(url);
     return this.http.get<EventsResponse>(url);
   }
 
