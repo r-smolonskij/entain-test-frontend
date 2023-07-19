@@ -1,0 +1,58 @@
+<h2 class="text-center mb-3">Add Event</h2>
+<div class="row justify-content-center" *ngIf="!loading; else loadingProcess">
+    <div class="col-12 col-sm-8">
+        <form class="add-form" [formGroup]="createForm" (submit)="onSubmit()">
+            <div class="mb-3">
+                <label for="name" class="form-label">Event name</label>
+                <input type="email" class="form-control" id="name" formControlName="name" placeholder="Name" required>
+                <div *ngIf="nameField && nameField.invalid && (nameField.dirty || nameField.touched)" class="pt-1 text-danger">
+                    <p *ngIf="nameField.errors?.['required']">
+                        Name is required.
+                    </p>
+                    <p *ngIf="nameField.errors?.['minlength']">
+                        Name must be at least 4 characters long.
+                    </p>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="sport" class="form-label">Sport</label>
+                <select class="form-select" name="sport" formControlName="sport">
+                    <option *ngFor="let sport of sportsItems" value="{{sport.value}}">{{sport.name}}</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" name="status" formControlName="status">
+                    <option *ngFor="let status of statusesItems" value="{{status.value}}">{{status.name}}</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="startDate" class="form-label">Start date and time</label>
+                <input (change)="onDateRangeChange()" id="startDate" class="form-control" type="datetime-local" formControlName="startDateTime" required />
+                <div *ngIf="startDateTimeField && startDateTimeField.invalid && (startDateTimeField.dirty || startDateTimeField.touched)" class="pt-1 text-danger">
+                    <p *ngIf="startDateTimeField.errors?.['required']">
+                        Start date and time is required.
+                    </p>
+                </div>
+            </div> 
+            <div class="mb-3">
+                <label for="finishDate" class="form-label">Finish date and time</label>
+                <input (change)="onDateRangeChange()" [min]="startDateTimeField?.value" id="finishDate" class="form-control" type="datetime-local" formControlName="finishDateTime" required />
+                <div *ngIf="finishDateTimeField && finishDateTimeField.invalid && (finishDateTimeField.dirty || finishDateTimeField.touched)" class="pt-1 text-danger">
+                    <p *ngIf="finishDateTimeField.errors?.['required']">
+                        Finish date and time is required.
+                    </p>
+                </div>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-block btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+<ng-template #loadingProcess>
+    <div class="text-center my-2"  >
+        <app-loader/>
+    </div>
+</ng-template>
+

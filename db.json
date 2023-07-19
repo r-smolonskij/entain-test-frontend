@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "name": "Event 1",
+      "sport": "football",
+      "status": "active",
+      "startTime": "2023-07-17T18:25:43.511Z",
+      "finishTime": "2023-07-18T18:25:43.511Z"
+    },
+    {
+      "id": 2,
+      "name": "Event 2",
+      "sport": "basketball",
+      "status": "active",
+      "startTime": "2023-07-18T18:25:43.511Z",
+      "finishTime": "2023-07-19T18:25:43.511Z"
+    },
+    {
+      "name": "Event 3",
+      "sport": "tennis",
+      "status": "inactive",
+      "startTime": "2023-07-19T06:19:00.000Z",
+      "finishTime": "2023-07-20T06:19:00.000Z",
+      "id": 1689661177918
+    },
+    {
+      "name": "John",
+      "sport": "football",
+      "status": "inactive",
+      "startTime": "2023-07-19T06:58:00.000Z",
+      "finishTime": "2023-07-21T06:58:00.000Z",
+      "id": 1689663530392
+    },
+    {
+      "name": "asdasd",
+      "sport": "hockey",
+      "status": "inactive",
+      "startTime": "2023-07-19T06:59:00.000Z",
+      "finishTime": "2023-07-21T06:59:00.000Z",
+      "id": 1689663560250
+    },
+    {
+      "name": "John 222",
+      "sport": "football",
+      "status": "finished",
+      "startTime": "2023-07-19T07:00:00.000Z",
+      "finishTime": "2023-07-21T07:00:00.000Z",
+      "id": 1689663635297
+    },
+    {
+      "name": "asdasd",
+      "sport": "football",
+      "status": "active",
+      "startTime": "2023-07-21T07:44:00.000Z",
+      "finishTime": "2023-07-21T07:44:00.000Z",
+      "id": 1689666260849
+    }
+  ]
+}
