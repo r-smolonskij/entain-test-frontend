@@ -44,10 +44,10 @@ export class EventsListComponent {
         this.selectedSportsItems
       )
       .subscribe((response: EventsResponse) => {
-        this.events = response.events;
+        this.events = response.events || [];
         this.totalPages = response.totalPages;
-        this.loading = false;
       });
+    this.loading = false;
   }
 
   changePageNumber(increment: boolean = true) {
