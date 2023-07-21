@@ -43,11 +43,17 @@ export class EventsListComponent {
         this.selectedStatusesItems,
         this.selectedSportsItems
       )
-      .subscribe((response: EventsResponse) => {
-        this.events = response.events || [];
-        this.totalPages = response.totalPages;
-      });
-    this.loading = false;
+      .subscribe(
+        (response: EventsResponse) => {
+          this.loading = false;
+          this.events = response.events || [];
+          this.totalPages = response.totalPages;
+        },
+        (err) => {
+          console.error(err);
+          this.loading = false;
+        }
+      );
   }
 
   changePageNumber(increment: boolean = true) {
